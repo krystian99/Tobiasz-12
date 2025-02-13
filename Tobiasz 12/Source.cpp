@@ -122,11 +122,6 @@ int main()
 	int l,z;
 
 	cin >> l;
-    //cin >> z;
-
-	//na_binarny(l);
-	//na_osmekowy(l);
-	///na_szesnastkowy(l);
 
 	bin_na_dzie(l);
 }
