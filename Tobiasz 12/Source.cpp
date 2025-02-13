@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <cmath>
+#include <string>
 
 using namespace std;
 
@@ -98,18 +99,22 @@ void na_szesnastkowy(int l)
 	cout << endl;
 }
 
-void bin_na_dzie(int z)
+int char_to_int(char c)
+{
+	return c - 48;
+}
+
+void bin_na_dzie(string str)
 {
 	int suma = 0;
 	int potega = 1;
 
-	while (z != 0)
-	{
-		int r = z % 10;
-		suma += r * potega;
+	// 10110011
 
+	for (int i = str.size() - 1; i >= 0; --i)
+	{
+		suma += char_to_int(str[i]) * potega;
 		potega *= 2;
-		z /= 10;
 	}
 
 	cout << suma << endl;
@@ -119,9 +124,9 @@ int main()
 {
 	stack<int> stos;
 
-	int l,z;
+	string str;
 
-	cin >> l;
+	cin >> str;
 
-	bin_na_dzie(l);
+	bin_na_dzie(str);
 }
