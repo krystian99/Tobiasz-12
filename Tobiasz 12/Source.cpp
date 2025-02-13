@@ -98,23 +98,6 @@ void na_szesnastkowy(int l)
 	cout << endl;
 }
 
-void bin_na_dzie(int z)
-{
-	int suma = 0;
-	int potega = 1;
-
-	while (z != 0)
-	{
-		int r = z % 10;
-		suma += r * potega;
-
-		potega *= 2;
-		z /= 10;
-	}
-
-	cout << suma << endl;
-}
-
 int main()
 {
 	stack<int> stos;
@@ -122,11 +105,8 @@ int main()
 	int l,z;
 
 	cin >> l;
-    //cin >> z;
 
-	//na_binarny(l);
-	//na_osmekowy(l);
-	///na_szesnastkowy(l);
-
-	bin_na_dzie(l);
+	na_binarny(l);
+	na_osmekowy(l);
+	na_szesnastkowy(l);
 }
