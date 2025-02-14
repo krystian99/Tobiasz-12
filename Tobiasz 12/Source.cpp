@@ -107,7 +107,7 @@ int char_to_int(char c)
 void bin_na_dzie(string str)
 {
 	int suma = 0;
-	int potega = 1;
+	int potega = 1; // 2^0
 
 	// 10110011
 
@@ -120,6 +120,41 @@ void bin_na_dzie(string str)
 	cout << suma << endl;
 }
 
+void hex_to_dec(string str)
+{
+	//D6
+	int suma = 0;
+	int potega = 1; // 16^0
+
+	int znak;
+
+	for (int i = str.size() - 1; i >= 0; --i)
+	{
+		if (str[i] >= 65 && str[i] <= 70)
+			znak = char_to_int(str[i]) - 7;
+		else
+			znak = char_to_int(str[i]);
+
+		suma += znak * potega;
+		potega *= 16;
+	}
+
+	cout << suma << endl;
+}
+void oct_na_dzie(string str)
+{
+	int suma=0;
+	int potega=1;
+
+	for(int i = str.size() - 1; i >= 0; --i)
+	{
+		suma+= char_to_int(str[i])* potega;
+		potega*= 8;
+	}
+	cout<< suma<< endl;
+}
+
+
 int main()
 {
 	stack<int> stos;
@@ -128,5 +163,7 @@ int main()
 
 	cin >> str;
 
-	bin_na_dzie(str);
+	//bin_na_dzie(str);
+	//hex_to_dec(str);
+	oct_na_dzie(str);
 }
