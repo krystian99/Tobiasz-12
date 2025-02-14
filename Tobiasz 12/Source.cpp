@@ -97,16 +97,54 @@ void na_szesnastkowy(int l)
 
 	cout << endl;
 }
+void na_bin2(int l)
+{
+	clear_stack();
+	while(l>0)
+	{
+		
+		int d=l%2;
+		stos.push(d);
+		l/=2;
+	}
+	while(!stos.empty())
+	{
+		cout << stos.top();
+		stos.pop();
+	}
+
+	cout << endl;
+
+}
+void na_ose(int l)
+{
+	clear_stack();
+	while(l>0)
+	{
+		int d=l%8;
+		stos.push(d);
+		l/=8;
+	}
+	while(!stos.empty())
+	{
+		cout<< stos.top();
+		stos.pop();
+	}
+	cout<<endl;
+}
+
+
 
 int main()
 {
 	stack<int> stos;
 
-	int l,z;
+	int l;
 
 	cin >> l;
 
 	na_binarny(l);
+	na_bin2(l);
 	na_osmekowy(l);
 	na_szesnastkowy(l);
 }
