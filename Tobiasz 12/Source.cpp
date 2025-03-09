@@ -4,7 +4,8 @@
 #include <cmath>
 
 using namespace std;
-stack<int> stos;
+stack<int> stos_liczb;
+stack<int> stos_operatorow;
 
 // 1000 3000000 +
 
@@ -52,7 +53,7 @@ bool czy_operator(char c)
 	}
 }
 
-int pobierzZeStos()
+int pobierzZeStos(stack<int> & stos)
 {
 	int tmp = stos.top();
 	stos.pop();
@@ -151,14 +152,43 @@ void notacja(string str)
 
 }
 
+// test 1: 2 + 4 + 3
+// test 2: (2 + 4) * 3 -> wszystkie elementy po spacji -> ( 2 + 4 ) * 3 -> ograniczamy siê do sprawdzania czy wczytany znak to liczba czy operator
+
+int wynikW(string str)
+{
+	// wersje etapowo: ³atwy(test1), œredni, trudny
+
+	// wersja 1: bez nawiasów
+	for (int i = 0; i < str.size(); ++i)
+	{
+		// akcja1, warunek -> stos liczb: 2, stos operatorow: nic -> dodawaj dalej bo brak dwóch liczb na stosie i brak operatora
+		if ()
+		{
+
+		}
+
+		// akcja2, warunek-> stos liczb: 2, stos operatorow: + -> dodawaj dalej bo brak dwóch liczb na stosie(mamy operator na stosie)
+		if ()
+		{
+
+		}
+		// akcja3, warunek-> stos liczb: 2, 4, stos operatorow: + -> zdejmij ze stosu i wypisz kolejno liczby i operatory
+		if ()
+		{
+			cout << pobierzZeStos(stos_liczb) << pobierzZeStos(stos_liczb) << pobierzZeStos(stos_operatorow);
+		}
+
+	}
+}
+
 int main()
 {
 	int x;
 
 	string str;
-	getline(cin, str);
+	getline(cin, str); // wyrazenie w postaci
 
-	//while (true)
 
-	notacja(str);
+	//notacja(str);
 }
